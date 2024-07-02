@@ -910,7 +910,8 @@ BudgetScreen As screen:
         BorderColor: =RGBA(0, 0, 0, 1)
         Color: =RGBA(19,113,155,1)
         DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Courier New'
+        FontWeight: =FontWeight.Bold
         Height: =62
         HoverBorderColor: =TextBox2.BorderColor
         HoverColor: =TextBox2.Color
@@ -1006,4 +1007,11 @@ BudgetScreen As screen:
         X: =664
         Y: =483
         ZIndex: =33
+
+    Rectangle6 As rectangle:
+        Height: =511
+        Width: =601
+        X: =357
+        Y: =216
+        ZIndex: =34
 
