@@ -47,7 +47,7 @@ DeleteBudget As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Delete"
+        Text: ="Yeet it!"
         Width: =290
         X: =212.04347826086965
         Y: =402.14473684210583
