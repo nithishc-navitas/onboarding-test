@@ -1,0 +1,203 @@
+recepitscreen As screen:
+    Fill: =RGBA(255,255,255,1)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
+    OnVisible: |-
+        =UpdateContext({amounttext:true});UpdateContext({amounttext:false});UpdateContext({CameraVisible:true});UpdateContext({ImageVisible:false})
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Group3_1 As group:
+        Height: =60
+        Width: =60
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+        Rectangle4_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle4_3.Fill
+            Fill: =RGBA(0,164,228,228)
+            Height: =60
+            HoverFill: =Rectangle4_3.Fill
+            OnSelect: =Navigate(BudgetScreen,ScreenTransition.Fade)
+            PressedFill: =Rectangle4_3.Fill
+            Width: =60
+            ZIndex: =7
+
+        icon2_2 As icon.ChevronLeft:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon2_2.Fill
+            Height: =30
+            HoverBorderColor: =ColorFade(icon2_2.BorderColor, 20%)
+            HoverColor: =ColorFade(icon2_2.Color, 20%)
+            HoverFill: =icon2_2.Fill
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(BudgetScreen,ScreenTransition.Fade)
+            PressedBorderColor: =ColorFade(icon2_2.BorderColor, -20%)
+            PressedColor: =ColorFade(icon2_2.Color, -20%)
+            PressedFill: =icon2_2.Fill
+            Width: =30
+            X: =15
+            Y: =15
+            ZIndex: =8
+
+    Group4 As group:
+        Height: =60
+        Width: =60
+        X: =964
+        Y: =0
+        ZIndex: =2
+
+        Rectangle4_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle4_4.Fill
+            Fill: =RGBA(0,164,228,228)
+            Height: =60
+            HoverFill: =Rectangle4_4.Fill
+            OnSelect: |-
+                =Navigate(DeleteReceipt,ScreenTransition.Fade,{Reciptrecord:Reciptrecord})
+            PressedFill: =Rectangle4_4.Fill
+            Width: =60
+            X: =964
+            ZIndex: =11
+
+        icon4 As icon.Trash:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon4.Fill
+            Height: =32
+            HoverBorderColor: =ColorFade(icon4.BorderColor, 20%)
+            HoverColor: =ColorFade(icon4.Color, 20%)
+            HoverFill: =icon4.Fill
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Navigate(DeleteReceipt,ScreenTransition.Fade,{Reciptrecord:Reciptrecord})
+            PressedBorderColor: =ColorFade(icon4.BorderColor, -20%)
+            PressedColor: =ColorFade(icon4.Color, -20%)
+            PressedFill: =icon4.Fill
+            Width: =32
+            X: =978
+            Y: =14
+            ZIndex: =12
+
+    Rectangle12_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle12_1.Fill
+        Fill: =RGBA(250, 250, 250, 1)
+        Height: =708
+        HoverFill: =Rectangle12_1.Fill
+        PressedFill: =Rectangle12_1.Fill
+        Width: =1024
+        Y: =60
+        ZIndex: =3
+
+    Rectangle1_3 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle1_3.Fill
+        Fill: =RGBA(0,164,228,228)
+        Height: =60
+        HoverFill: =Rectangle1_3.Fill
+        PressedFill: =Rectangle1_3.Fill
+        Width: =1024
+        ZIndex: =4
+
+    TextBox1_4 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =60
+        HoverBorderColor: =TextBox1_4.BorderColor
+        HoverColor: =TextBox1_4.Color
+        HoverFill: =TextBox1_4.Fill
+        PressedBorderColor: =TextBox1_4.BorderColor
+        PressedColor: =TextBox1_4.Color
+        PressedFill: =TextBox1_4.Fill
+        Size: =20
+        Text: ="View receipt"
+        Width: =1024
+        ZIndex: =5
+
+    Gallery2_1 As gallery.imageGalleryHorizontal:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =Gallery2_1.BorderColor
+        DisabledFill: =Gallery2_1.Fill
+        Height: =90
+        HoverBorderColor: =Gallery2_1.BorderColor
+        HoverFill: =Gallery2_1.Fill
+        Items: =Filter(Receipts, ExpenseId =Max(Expenses,Id)+1)
+        PressedBorderColor: =Gallery2_1.BorderColor
+        PressedFill: =Gallery2_1.Fill
+        TemplateSize: =If(Gallery2_1.Layout = Layout.Horizontal, Gallery2_1.Height, Gallery2_1.Width-60)
+        Width: =326.139937106918
+        X: =23.8600628930818
+        Y: =568.8888888888869
+        ZIndex: =6
+
+        Image2_1 As image:
+            ApplyEXIFOrientation: =false
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledFill: =RGBA(193, 193, 193, 0.95)
+            Height: =Gallery2_1.TemplateHeight 
+            HoverBorderColor: =ColorFade(Image2_1.BorderColor, 20%)
+            HoverFill: =ColorFade(Image2_1.Fill, 20%)
+            Image: =ThisItem.Receiptlist
+            ImagePosition: =ImagePosition.Fill
+            PressedBorderColor: =ColorFade(Image2_1.BorderColor, -20%)
+            PressedFill: =ColorFade(Image2_1.Fill, -20%)
+            Width: =Gallery2_1.TemplateWidth
+            ZIndex: =1
+
+    Button1_9 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_9.Fill, -15%)
+        BorderThickness: =0
+        Color: =RGBA(255,255,255,1)
+        DisabledBorderColor: =ColorFade(Button1_9.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Fill: =RGBA(14,59,86,1)
+        Height: =50
+        HoverBorderColor: =ColorFade(Button1_9.BorderColor, 20%)
+        HoverColor: =Button1_9.Color
+        HoverFill: =ColorFade(Button1_9.Fill, 20%)
+        OnSelect: |-
+            =UpdateContext({CameraVisible:true,ImageVisible:false})
+        PressedBorderColor: =Button1_9.Fill
+        PressedColor: =Button1_9.Fill
+        PressedFill: =Button1_9.Color
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Retake"
+        Visible: =ImageVisible
+        Width: =290
+        X: =408.90419161676664
+        Y: =630
+        ZIndex: =9
+
+    Image1 As image:
+        ApplyEXIFOrientation: =false
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(159, 167, 165, 1)
+        DisabledFill: =RGBA(193, 193, 193, 0.95)
+        Height: =708
+        HoverBorderColor: =ColorFade(Image1.BorderColor, 20%)
+        HoverFill: =ColorFade(Image1.Fill, 20%)
+        Image: =Reciptrecord.Receiptlist
+        PressedBorderColor: =ColorFade(Image1.BorderColor, -20%)
+        PressedFill: =ColorFade(Image1.Fill, -20%)
+        Width: =1024
+        Y: =60
+        ZIndex: =10
+

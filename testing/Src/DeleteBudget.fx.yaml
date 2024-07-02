@@ -1,0 +1,82 @@
+DeleteBudget As screen:
+    Fill: =RGBA(0,164,228,228)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    TextBox11_3 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =84.14473684210497
+        HoverBorderColor: =TextBox11_3.BorderColor
+        HoverColor: =TextBox11_3.Color
+        HoverFill: =TextBox11_3.Fill
+        PressedBorderColor: =TextBox11_3.BorderColor
+        PressedColor: =TextBox11_3.Color
+        PressedFill: =TextBox11_3.Fill
+        Size: =22
+        Text: |-
+            ="Are you sure you want to delete this 
+            budget?"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =697
+        X: =163.5
+        Y: =286.855263157895
+        ZIndex: =1
+
+    Button1_14 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_14.Fill, -15%)
+        BorderThickness: =0
+        Color: =RGBA(255,255,255,1)
+        DisabledBorderColor: =ColorFade(Button1_14.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Fill: =RGBA(20,93,137,1)
+        Height: =50
+        HoverBorderColor: =Button1_14.BorderColor
+        HoverColor: =Button1_14.Color
+        HoverFill: =Button1_14.Fill
+        OnSelect: =RemoveIf(Receipts,BudgetId=Gallery1.Selected.BudgetId);RemoveIf(ExpenseByCategory,BudgetId=Gallery1.Selected.BudgetId);RemoveIf(Expenses,BudgetId=Gallery1.Selected.BudgetId);RemoveIf(Budgets,BudgetId=Gallery1.Selected.BudgetId);Navigate(BudgetScreen,ScreenTransition.None)
+        PressedBorderColor: =Button1_14.BorderColor
+        PressedColor: =Button1_14.Color
+        PressedFill: =ColorFade(Button1_14.Fill, 10%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Delete"
+        Width: =290
+        X: =212.04347826086965
+        Y: =402.14473684210583
+        ZIndex: =3
+
+    Button1_15 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_15.Fill, -15%)
+        BorderThickness: =0
+        Color: =RGBA(20,93,137,1)
+        DisabledBorderColor: =ColorFade(Button1_15.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =50
+        HoverBorderColor: =ColorFade(Button1_15.BorderColor, 20%)
+        HoverColor: =Button1_15.Color
+        HoverFill: =Button1_15.Fill
+        OnSelect: =Back()
+        PressedBorderColor: =Button1_15.Fill
+        PressedColor: =Button1_15.Color
+        PressedFill: =ColorFade(Button1_15.Fill, 10%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Cancel"
+        Width: =290
+        X: =521.9565217391305
+        Y: =402.14473684210583
+        ZIndex: =4
+
