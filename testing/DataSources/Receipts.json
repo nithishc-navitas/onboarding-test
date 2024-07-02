@@ -1,0 +1,24 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2024-06-10T23:43:53.8730000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "__PowerAppsId__": "Row id",
+      "BudgetId": "BudgetId",
+      "ExpenseId": "ExpenseId",
+      "Id": "Id",
+      "Receiptlist": "Receiptlist",
+      "ReceiptName": "ReceiptName"
+    },
+    "DatasetName": "b!5X0guEaCJEmqVTEKeTPz6-roydWvzuJKocmrHza1RU654UnbMRdkQ7tyWop0G2Y3.01MY2YZTC5JFHVMOXQGNA2WOXOVLBRH72M",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Receipts",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

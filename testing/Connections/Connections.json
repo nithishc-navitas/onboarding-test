@@ -1,0 +1,56 @@
+{
+  "1181a4c0-484e-4b17-947f-7850ce36fe35": {
+    "connectionRef": {
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1689/1.0.1689.3722/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "9191b607-1085-4550-8024-f26649f2396f"
+    ],
+    "id": "1181a4c0-484e-4b17-947f-7850ce36fe35"
+  },
+  "9191b607-1085-4550-8024-f26649f2396f": {
+    "connectionRef": {
+      "displayName": "Excel",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/excel/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excel"
+    },
+    "datasets": {
+      "b!5X0guEaCJEmqVTEKeTPz6-roydWvzuJKocmrHza1RU654UnbMRdkQ7tyWop0G2Y3.01MY2YZTC5JFHVMOXQGNA2WOXOVLBRH72M": {
+        "dataSources": {
+          "Budgets": {
+            "tableName": "Budgets"
+          },
+          "Categories": {
+            "tableName": "Categories"
+          },
+          "ExpenseByCategory": {
+            "tableName": "ExpenseByCategory"
+          },
+          "Expenses": {
+            "tableName": "Expenses"
+          },
+          "Receipts": {
+            "tableName": "Receipts"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Budgets",
+      "Expenses",
+      "Categories",
+      "Receipts",
+      "ExpenseByCategory"
+    ],
+    "dependencies": {
+      "fileSource": "1181a4c0-484e-4b17-947f-7850ce36fe35"
+    },
+    "dependents": [],
+    "id": "9191b607-1085-4550-8024-f26649f2396f"
+  }
+}

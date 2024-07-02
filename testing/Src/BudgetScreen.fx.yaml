@@ -1,0 +1,1009 @@
+BudgetScreen As screen:
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
+    OnHidden: =false
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Group1 As group:
+        Height: =60
+        Width: =60
+        X: =964
+        Y: =0
+        ZIndex: =1
+
+        Rectangle4_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle4_1.Fill
+            Fill: =RGBA(0,164,228,228)
+            Height: =60
+            HoverFill: =Rectangle4_1.Fill
+            OnSelect: |-
+                =NewForm(FormNewBudget);Navigate(NewBudgetScreen,ScreenTransition.Fade,{Record:Defaults(Budgets)})
+            PressedFill: =Rectangle4_1.Fill
+            Width: =60
+            X: =964
+            ZIndex: =6
+
+        icon3 As icon.Add:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon3.Fill
+            Height: =30
+            HoverBorderColor: =ColorFade(icon3.BorderColor, 20%)
+            HoverColor: =ColorFade(icon3.Color, 20%)
+            HoverFill: =icon3.Fill
+            Icon: =Icon.Add
+            OnSelect: |-
+                =NewForm(FormNewBudget);Navigate(NewBudgetScreen,ScreenTransition.Fade,{Record:Defaults(Budgets)})
+            PressedBorderColor: =ColorFade(icon3.BorderColor, -20%)
+            PressedColor: =ColorFade(icon3.Color, -20%)
+            PressedFill: =icon3.Fill
+            Width: =30
+            X: =979
+            Y: =15
+            ZIndex: =7
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle2.Fill
+        Fill: =RGBA(229,234,243,1)
+        Height: =119
+        HoverFill: =Rectangle2.Fill
+        PressedFill: =Rectangle2.Fill
+        Width: =1024
+        Y: =58.97959183673469
+        ZIndex: =2
+
+    Rectangle3_15 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle3_15.Fill
+        Fill: =RGBA(158,161,165,.1)
+        Height: =588
+        HoverFill: =Rectangle3_15.Fill
+        PressedFill: =Rectangle3_15.Fill
+        Width: =2
+        X: =721.0366972477041
+        Y: =178.42045242994993
+        ZIndex: =3
+
+    Rectangle1 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle1.Fill
+        Fill: =RGBA(0,164,228,228)
+        Height: =60
+        HoverFill: =Rectangle1.Fill
+        PressedFill: =Rectangle1.Fill
+        Width: =1024
+        ZIndex: =4
+
+    TextBox1 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =60
+        HoverBorderColor: =TextBox1.BorderColor
+        HoverColor: =TextBox1.Color
+        HoverFill: =TextBox1.Fill
+        PressedBorderColor: =TextBox1.BorderColor
+        PressedColor: =TextBox1.Color
+        PressedFill: =TextBox1.Fill
+        Size: =20
+        Text: ="Budget Tracker"
+        Width: =884
+        X: =70
+        ZIndex: =5
+
+    TextBox2_4 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,0,0,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =45.982207824661
+        HoverBorderColor: =TextBox2_4.BorderColor
+        HoverColor: =TextBox2_4.Color
+        HoverFill: =TextBox2_4.Fill
+        PressedBorderColor: =TextBox2_4.BorderColor
+        PressedColor: =TextBox2_4.Color
+        PressedFill: =TextBox2_4.Fill
+        Size: =18
+        Text: |-
+            =If(Text(Coalesce(Sum(Budgets,BudgetAmount),0),"$#,##")="$","$0",Text(Coalesce(Sum(Budgets,BudgetAmount),0),"$#,##"))
+        VerticalAlign: =VerticalAlign.Top
+        Width: =162
+        Wrap: =false
+        X: =317
+        Y: =108.53623188405792
+        ZIndex: =8
+
+    TextBox2_5 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255,81,97,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =44.81625688811599
+        HoverBorderColor: =TextBox2_5.BorderColor
+        HoverColor: =TextBox2_5.Color
+        HoverFill: =TextBox2_5.Fill
+        PressedBorderColor: =TextBox2_5.BorderColor
+        PressedColor: =TextBox2_5.Color
+        PressedFill: =TextBox2_5.Fill
+        Size: =18
+        Text: |
+            =If(Text(Coalesce(Sum(Gallery1.AllItems,SpendText.Text),0),"$#,##") ="$","$0",Text(Coalesce(Sum(Gallery1.AllItems,SpendText.Text),0),"$#,##"))
+        VerticalAlign: =VerticalAlign.Top
+        Width: =162
+        Wrap: =false
+        X: =598
+        Y: =108.53623188405792
+        ZIndex: =9
+
+    TextBox2_6 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(102,162,9,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =44.91805329530101
+        HoverBorderColor: =TextBox2_6.BorderColor
+        HoverColor: =TextBox2_6.Color
+        HoverFill: =TextBox2_6.Fill
+        PressedBorderColor: =TextBox2_6.BorderColor
+        PressedColor: =TextBox2_6.Color
+        PressedFill: =TextBox2_6.Fill
+        Size: =18
+        Text: |
+            =If(Text(Coalesce(Sum(Gallery1.AllItems,RemainingText.Text),0),"$#,##") ="$","$0",Text(Coalesce(Sum(Gallery1.AllItems,RemainingText.Text),0),"$#,##"))
+        VerticalAlign: =VerticalAlign.Top
+        Width: =162
+        Wrap: =false
+        X: =854
+        Y: =108.17391304347822
+        ZIndex: =10
+
+    Gallery1 As gallery.galleryVertical:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =Gallery1.BorderColor
+        DisabledFill: =Gallery1.Fill
+        Fill: |
+            =RGBA(244,247,251,1)
+        Height: =590.7405095412042
+        HoverBorderColor: =Gallery1.BorderColor
+        HoverFill: =Gallery1.Fill
+        Items: =Budgets
+        Layout: =Layout.Vertical
+        PressedBorderColor: =Gallery1.BorderColor
+        PressedFill: =Gallery1.Fill
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =153.20208631945803
+        Width: =317
+        Y: =177.25949045879574
+        ZIndex: =11
+
+        Rectangle3_13 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle3_13.Fill
+            Fill: =RGBA(158,161,165,.2)
+            Height: =2
+            HoverFill: =Rectangle3_13.Fill
+            PressedFill: =Rectangle3_13.Fill
+            Width: =317
+            Y: =151.28167115902926
+            ZIndex: =1
+
+        Rectangle3_14 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle3_14.Fill
+            Fill: =RGBA(158,161,165,.3)
+            Height: =153.202086319458
+            HoverFill: =Rectangle3_14.Fill
+            PressedFill: =Rectangle3_14.Fill
+            Width: =2
+            X: =315.20388349514564
+            ZIndex: =2
+
+        Rectangle7 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle7.Fill
+            Fill: =If(ThisItem.IsSelected,RGBA(163, 179, 214, .1),RGBA(0,0,0,0))
+            Height: =151.5
+            HoverFill: =Rectangle7.Fill
+            PressedFill: =Rectangle7.Fill
+            Visible: =If(ThisItem.IsSelected,true,false)
+            Width: =315.5
+            ZIndex: =3
+
+        TextBox2_7 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            HoverBorderColor: =TextBox2_7.BorderColor
+            HoverColor: =TextBox2_7.Color
+            HoverFill: =TextBox2_7.Fill
+            PressedBorderColor: =TextBox2_7.BorderColor
+            PressedColor: =TextBox2_7.Color
+            PressedFill: =TextBox2_7.Fill
+            Size: =16
+            Text: =ThisItem.BudgetTitle
+            VerticalAlign: =VerticalAlign.Top
+            Width: =260.35596995407934
+            Wrap: =false
+            X: =14.6440300459207
+            Y: =5.290043290043287
+            ZIndex: =4
+
+        TextBox2_8 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =25.915251415251603
+            HoverBorderColor: =TextBox2_8.BorderColor
+            HoverColor: =TextBox2_8.Color
+            HoverFill: =TextBox2_8.Fill
+            PressedBorderColor: =TextBox2_8.BorderColor
+            PressedColor: =TextBox2_8.Color
+            PressedFill: =TextBox2_8.Fill
+            Size: =10
+            Text: ="Budgeted"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =121.666666666667
+            X: =14.02289377289381
+            Y: =43.08474858474843
+            ZIndex: =5
+
+        TextBox2_9 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =32.6327345309381
+            HoverBorderColor: =TextBox2_9.BorderColor
+            HoverColor: =TextBox2_9.Color
+            HoverFill: =TextBox2_9.Fill
+            PressedBorderColor: =TextBox2_9.BorderColor
+            PressedColor: =TextBox2_9.Color
+            PressedFill: =TextBox2_9.Fill
+            Size: =12
+            Text: |-
+                =If(ThisItem.BudgetAmount = 0, "$0", Text(Value(ThisItem.BudgetAmount),"$#,##")) 
+            VerticalAlign: =VerticalAlign.Top
+            Wrap: =false
+            X: =14.153846153846171
+            Y: =60.88274932614564
+            ZIndex: =6
+
+        TextBox2_10 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =21.8497650148594
+            HoverBorderColor: =TextBox2_10.BorderColor
+            HoverColor: =TextBox2_10.Color
+            HoverFill: =TextBox2_10.Fill
+            PressedBorderColor: =TextBox2_10.BorderColor
+            PressedColor: =TextBox2_10.Color
+            PressedFill: =TextBox2_10.Fill
+            Size: =10
+            Text: ="Spent"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =74.778624865063
+            X: =14.435897435897509
+            Y: =96.15023498514063
+            ZIndex: =7
+
+        SpendText As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255,81,97,1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =28.15229110512132
+            HoverBorderColor: =SpendText.BorderColor
+            HoverColor: =SpendText.Color
+            HoverFill: =SpendText.Fill
+            PressedBorderColor: =SpendText.BorderColor
+            PressedColor: =SpendText.Color
+            PressedFill: =SpendText.Fill
+            Size: =12
+            Text: |-
+                =If(Text(Coalesce(Sum(Filter(Expenses,BudgetTitle = ThisItem.BudgetTitle && BudgetId=ThisItem.BudgetId), Value(Expense)),0),"$#,##")="$","$0",Text(Coalesce(Sum(Filter(Expenses,BudgetId = ThisItem.BudgetId ), Value(Expense)),0),"$#,##"))
+            VerticalAlign: =VerticalAlign.Top
+            Width: =120
+            Wrap: =false
+            X: =14.596153846153873
+            Y: =112.84770889487868
+            ZIndex: =8
+
+        TextBox2_12 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =21.8436657681941
+            HoverBorderColor: =TextBox2_12.BorderColor
+            HoverColor: =TextBox2_12.Color
+            HoverFill: =TextBox2_12.Fill
+            PressedBorderColor: =TextBox2_12.BorderColor
+            PressedColor: =TextBox2_12.Color
+            PressedFill: =TextBox2_12.Fill
+            Size: =10
+            Text: ="Remaining"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =92.778624865063
+            X: =184.586
+            Y: =96.15633423180588
+            ZIndex: =9
+
+        RemainingText As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(102,162,9,1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =29.236842105262994
+            HoverBorderColor: =RemainingText.BorderColor
+            HoverColor: =RemainingText.Color
+            HoverFill: =RemainingText.Fill
+            PressedBorderColor: =RemainingText.BorderColor
+            PressedColor: =RemainingText.Color
+            PressedFill: =RemainingText.Fill
+            Size: =12
+            Text: |-
+                =If(Text(ThisItem.BudgetAmount-Coalesce(Sum(Filter(Expenses,BudgetTitle = ThisItem.BudgetTitle && BudgetId=ThisItem.BudgetId),Value(Expense)),0),"$#,##")="$","$0",Text(ThisItem.BudgetAmount-Coalesce(Sum(Filter
+                (Expenses,BudgetId = ThisItem.BudgetId),Value(Expense)),0),"$#,##"))
+            VerticalAlign: =VerticalAlign.Top
+            Width: =92
+            Wrap: =false
+            X: =184.58976106232913
+            Y: =113.11086678961568
+            ZIndex: =10
+
+        Rectangle3 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle3.Fill
+            Fill: =RGBA(62,96,170,0)
+            Height: =153
+            HoverFill: =Rectangle3.Fill
+            OnSelect: |-
+                =UpdateContext({SpendRecord:ThisItem})
+            PressedFill: =Rectangle3.Fill
+            Width: =0
+            ZIndex: =11
+
+        icon1 As icon.ChevronRight:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon1.Fill
+            Height: =22
+            HoverBorderColor: =ColorFade(icon1.BorderColor, 20%)
+            HoverColor: =ColorFade(icon1.Color, 20%)
+            HoverFill: =icon1.Fill
+            Icon: =Icon.ChevronRight
+            PressedBorderColor: =ColorFade(icon1.BorderColor, -20%)
+            PressedColor: =ColorFade(icon1.Color, -20%)
+            PressedFill: =icon1.Fill
+            Visible: =If(ThisItem.IsSelected,true,false)
+            Width: =22
+            X: =282.372
+            Y: =64.5
+            ZIndex: =12
+
+        icon7 As icon.Trash:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon7.Fill
+            Height: =22
+            HoverBorderColor: =ColorFade(icon7.BorderColor, 20%)
+            HoverColor: =ColorFade(icon7.Color, 20%)
+            HoverFill: =icon7.Fill
+            Icon: =Icon.Trash
+            OnSelect: =Navigate(DeleteBudget,ScreenTransition.None)
+            PressedBorderColor: =ColorFade(icon7.BorderColor, -20%)
+            PressedColor: =ColorFade(icon7.Color, -20%)
+            PressedFill: =icon7.Fill
+            Visible: =If(ThisItem.IsSelected,true,false)
+            Width: =22
+            X: =280.918032786885
+            Y: =14.29004329004329
+            ZIndex: =13
+
+    Title2 As label:
+        Align: =TextPosition.Left
+        Color: =RGBA(25,113,156,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =51
+        HoverBorderColor: =Title2.BorderColor
+        HoverColor: =Title2.Color
+        HoverFill: =Title2.Fill
+        PressedBorderColor: =Title2.BorderColor
+        PressedColor: =Title2.Color
+        PressedFill: =Title2.Fill
+        Size: =18
+        Text: ="Total spent"
+        Width: =183.776509396515
+        X: =332.67849465506253
+        Y: =178.43786582335272
+        ZIndex: =12
+
+    PieChart2 As pieChart:
+        Color: =RGBA(47,41,43,1)
+        DisabledBorderColor: =RGBA(159, 167, 165, 1)
+        Height: =237.591541216965
+        HoverBorderColor: =ColorFade(PieChart2.BorderColor, 30%)
+        Items: =Filter(ExpenseByCategory,BudgetId=Gallery1.Selected.BudgetId)
+        PressedBorderColor: =ColorFade(PieChart2.BorderColor, -30%)
+        Visible: =CountRows(Filter(Expenses,BudgetTitle=(Gallery1.Selected.BudgetTitle) && BudgetId=Gallery1.Selected.BudgetId))
+        Width: =404
+        X: =317
+        Y: =216.7766024623907
+        ZIndex: =13
+
+    TextBox2_14 As label:
+        Align: =TextPosition.Right
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255,81,97,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =43.829978454805
+        HoverBorderColor: =TextBox2_14.BorderColor
+        HoverColor: =TextBox2_14.Color
+        HoverFill: =TextBox2_14.Fill
+        PressedBorderColor: =TextBox2_14.BorderColor
+        PressedColor: =TextBox2_14.Color
+        PressedFill: =TextBox2_14.Fill
+        Size: =18
+        Text: |-
+            =If(Text(Coalesce(Sum(Filter(Expenses,BudgetTitle = Gallery1.Selected.BudgetTitle && BudgetId=Gallery1.Selected.BudgetId), Value(Expense)),0),"$#,##")="$","$0",Text(Coalesce(Sum(Filter(Expenses,BudgetId = Gallery1.Selected.BudgetId), Value(Expense)),0),"$#,##"))
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =If(TextBox2_14.Text="0",false,true)
+        Width: =121.666666666667
+        Wrap: =false
+        X: =576.242369095871
+        Y: =186
+        ZIndex: =14
+
+    Title2_1 As label:
+        Align: =TextPosition.Left
+        Color: =RGBA(25,113,156,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =52
+        HoverBorderColor: =Title2_1.BorderColor
+        HoverColor: =Title2_1.Color
+        HoverFill: =Title2_1.Fill
+        PressedBorderColor: =Title2_1.BorderColor
+        PressedColor: =Title2_1.Color
+        PressedFill: =Title2_1.Fill
+        Size: =18
+        Text: ="Attached receipts"
+        Width: =267.86248779296875
+        X: =736.5499572753906
+        Y: =177.36814367935574
+        ZIndex: =15
+
+    Gallery4 As gallery.galleryVertical:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =Gallery4.BorderColor
+        DisabledFill: =Gallery4.Fill
+        Height: =239.4568867457333
+        HoverBorderColor: =Gallery4.BorderColor
+        HoverFill: =Gallery4.Fill
+        Items: =Filter(Expenses,BudgetTitle = Gallery1.Selected.BudgetTitle && BudgetId=Gallery1.Selected.BudgetId)
+        Layout: =Layout.Vertical
+        PressedBorderColor: =Gallery4.BorderColor
+        PressedFill: =Gallery4.Fill
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =46.9199206479688
+        Width: =366
+        X: =335.9583333333333
+        Y: =526.7887272893547
+        ZIndex: =16
+
+        Rectangle7_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle7_1.Fill
+            Fill: =If(ThisItem.IsSelected,RGBA(163, 179, 214, .3),RGBA(0,0,0,0))
+            Height: =45
+            HoverFill: =Rectangle7_1.Fill
+            PressedFill: =Rectangle7_1.Fill
+            Visible: =If(ThisItem.IsSelected,true,false)
+            Width: =366.838805727544
+            ZIndex: =1
+
+        TextBox6 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: |
+                =If(ThisItem.IsSelected, RGBA(0,0,0,1), RGBA(92,92,92,1))
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            Height: =46.9199206479688
+            HoverBorderColor: =TextBox6.BorderColor
+            HoverColor: =TextBox6.Color
+            HoverFill: =TextBox6.Fill
+            PaddingBottom: =0
+            PaddingLeft: =10
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =TextBox6.BorderColor
+            PressedColor: =TextBox6.Color
+            PressedFill: =TextBox6.Fill
+            Size: =14
+            Text: =ThisItem.ExpenseName
+            Width: =177
+            Wrap: =false
+            X: =5.52966101694915
+            ZIndex: =2
+
+        Rectangle3_21 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle3_21.Fill
+            Fill: =RGBA(158,161,165,.1)
+            Height: =2.1308480852165985
+            HoverFill: =Rectangle3_21.Fill
+            PressedFill: =Rectangle3_21.Fill
+            Width: =366
+            Y: =44.7890725627522
+            ZIndex: =3
+
+        TextBox2_22 As label:
+            Align: =TextPosition.Right
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255,81,97,1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            FontWeight: =FontWeight.Semibold
+            Height: =45
+            HoverBorderColor: =TextBox2_22.BorderColor
+            HoverColor: =TextBox2_22.Color
+            HoverFill: =TextBox2_22.Fill
+            PressedBorderColor: =TextBox2_22.BorderColor
+            PressedColor: =TextBox2_22.Color
+            PressedFill: =TextBox2_22.Fill
+            Size: =14
+            Text: |-
+                =
+                If( Text(Value(ThisItem.Expense)) = "0", "$",  Text(Value(ThisItem.Expense),"$#,##"))
+            Width: =90.98281867252797
+            Wrap: =false
+            X: =234
+            ZIndex: =4
+
+        icon5_1 As icon.DocumentwithContent:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0,0,0,.7)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon5_1.Fill
+            Height: =20
+            HoverBorderColor: =ColorFade(icon5_1.BorderColor, 20%)
+            HoverColor: =ColorFade(icon5_1.Color, 20%)
+            HoverFill: =icon5_1.Fill
+            Icon: =Icon.DocumentWithContent
+            PressedBorderColor: =ColorFade(icon5_1.BorderColor, -20%)
+            PressedColor: =ColorFade(icon5_1.Color, -20%)
+            PressedFill: =icon5_1.Fill
+            Visible: =CountRows(Filter(Receipts,ExpenseId = ThisItem.Id))>0 
+            Width: =20
+            X: =196.397
+            Y: =13.265306122448983
+            ZIndex: =5
+
+        Group5 As group:
+            Height: =36
+            Width: =36
+            X: =321.525423728813
+            Y: =5.10204081632653
+            ZIndex: =6
+
+            Rectangle7_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle7_2.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =36
+                HoverFill: =Rectangle7_2.Fill
+                OnSelect: =Navigate(DeleteExpense,ScreenTransition.Fade)
+                PressedFill: =Rectangle7_2.Fill
+                Visible: =If(ThisItem.IsSelected,true,false)
+                Width: =36
+                X: =321.5254237288133
+                Y: =5.102040816326529
+                ZIndex: =7
+
+            icon6 As icon.Trash:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0,0,0,1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledColor: =RGBA(193, 193, 193, 0.95)
+                DisabledFill: =icon6.Fill
+                Height: =20
+                HoverBorderColor: =ColorFade(icon6.BorderColor, 20%)
+                HoverColor: =ColorFade(icon6.Color, 20%)
+                HoverFill: =icon6.Fill
+                Icon: =Icon.Trash
+                OnSelect: =Navigate(DeleteExpense,ScreenTransition.Fade)
+                PressedBorderColor: =ColorFade(icon6.BorderColor, -20%)
+                PressedColor: =ColorFade(icon6.Color, -20%)
+                PressedFill: =icon6.Fill
+                Visible: =If(ThisItem.IsSelected,true,false)
+                Width: =20
+                X: =329.525423728813
+                Y: =13.102040816326528
+                ZIndex: =8
+
+    Gallery5 As gallery.galleryVertical:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =Gallery5.BorderColor
+        DisabledFill: =Gallery5.Fill
+        Height: =499.1536209833472
+        HoverBorderColor: =Gallery5.BorderColor
+        HoverFill: =Gallery5.Fill
+        Items: =Filter(Receipts,ExpenseId =  Gallery4.Selected.Id)
+        Layout: =Layout.Vertical
+        PressedBorderColor: =Gallery5.BorderColor
+        PressedFill: =Gallery5.Fill
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =38.605681271063986
+        Width: =262
+        X: =742
+        Y: =240.09199305174073
+        ZIndex: =17
+
+        Rectangle7_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle7_3.Fill
+            Fill: =If(ThisItem.IsSelected,RGBA(163, 179, 214, .3),RGBA(0,0,0,0))
+            Height: =37
+            HoverFill: =Rectangle7_3.Fill
+            PressedFill: =Rectangle7_3.Fill
+            Visible: =If(ThisItem.IsSelected,true,false)
+            Width: =262
+            ZIndex: =1
+
+        icon5 As icon.DocumentwithContent:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0,0,0,.7)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =icon5.Fill
+            Height: =20
+            HoverBorderColor: =ColorFade(icon5.BorderColor, 20%)
+            HoverColor: =ColorFade(icon5.Color, 20%)
+            HoverFill: =icon5.Fill
+            Icon: =Icon.DocumentWithContent
+            PressedBorderColor: =ColorFade(icon5.BorderColor, -20%)
+            PressedColor: =ColorFade(icon5.Color, -20%)
+            PressedFill: =icon5.Fill
+            Width: =20
+            X: =14.037037037037023
+            Y: =9.061224489795918
+            ZIndex: =2
+
+        TextBox8 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0,0,0,1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            Height: =37
+            HoverBorderColor: =TextBox8.BorderColor
+            HoverColor: =TextBox8.Color
+            HoverFill: =TextBox8.Fill
+            OnSelect: |-
+                =Navigate(recepitscreen,ScreenTransition.Fade,{Reciptrecord:ThisItem})
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =TextBox8.BorderColor
+            PressedColor: =TextBox8.Color
+            PressedFill: =TextBox8.Fill
+            Text: =ThisItem.ReceiptName
+            Width: =220.3779191780883
+            Wrap: =false
+            X: =41.6220808219117
+            ZIndex: =3
+
+        Rectangle3_24 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle3_24.Fill
+            Fill: =RGBA(158,161,165,.1)
+            Height: =2
+            HoverFill: =Rectangle3_24.Fill
+            PressedFill: =Rectangle3_24.Fill
+            Width: =262
+            Y: =36.605681271064
+            ZIndex: =4
+
+    Timer1 As timer:
+        AutoStart: =true
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255,255,255,1)
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
+        DisabledColor: =RGBA(186, 186, 186, 1)
+        DisabledFill: =RGBA(119, 119, 119, 1)
+        Duration: =100
+        Fill: =RGBA(62,96,170,1)
+        HoverBorderColor: =ColorFade(Timer1.BorderColor, 20%)
+        HoverColor: =Timer1.Color
+        HoverFill: =ColorFade(Timer1.Fill, 20%)
+        OnTimerEnd: |-
+            =UpdateContext({starttimer:true})
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =ColorFade(Timer1.BorderColor, -20%)
+        PressedColor: =Timer1.Color
+        PressedFill: =ColorFade(Timer1.Fill, -20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =11
+        Start: =starttimer
+        Text: |-
+            =Text(Time(0, 0, Timer1.Value/1000), "hh:mm:ss")
+        Visible: =false
+        Width: =150
+        X: =46
+        Y: =15
+        ZIndex: =18
+
+    Circle1 As circle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Circle1.Fill
+        Fill: =RGBA(229,234,243,1)
+        Height: =150
+        HoverFill: =Circle1.Fill
+        PressedFill: =Circle1.Fill
+        Visible: =!CountRows(Filter(Expenses,BudgetTitle=(Gallery1.Selected.BudgetTitle) && BudgetId=(Gallery1.Selected.BudgetId))) 
+        Width: =150
+        X: =445
+        Y: =250.7014770126887
+        ZIndex: =19
+
+    Title2_4 As label:
+        Align: =TextPosition.Left
+        Color: =RGBA(25,113,156,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =51
+        HoverBorderColor: =Title2_4.BorderColor
+        HoverColor: =Title2_4.Color
+        HoverFill: =Title2_4.Fill
+        PressedBorderColor: =Title2_4.BorderColor
+        PressedColor: =Title2_4.Color
+        PressedFill: =Title2_4.Fill
+        Size: =18
+        Text: ="Expenses"
+        Width: =183.776509396515
+        X: =329.79212454212415
+        Y: =469.81709666341675
+        ZIndex: =20
+
+    TextBox13 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(204, 204, 204, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        HoverBorderColor: =TextBox13.BorderColor
+        HoverColor: =TextBox13.Color
+        HoverFill: =TextBox13.Fill
+        Italic: =true
+        PressedBorderColor: =TextBox13.BorderColor
+        PressedColor: =TextBox13.Color
+        PressedFill: =TextBox13.Fill
+        Text: ="No receipts"
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =IsBlank(TextBox8.Text)||IsBlank(Gallery5.Selected.icon5.Color)
+        Width: =301
+        X: =723
+        Y: =427.16951354237
+        ZIndex: =21
+
+    Rectangle3_22 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle3_22.Fill
+        Fill: =RGBA(158,161,165,.1)
+        Height: =2
+        HoverFill: =Rectangle3_22.Fill
+        PressedFill: =Rectangle3_22.Fill
+        Visible: =CountRows(Filter(Expenses,BudgetTitle=Gallery1.Selected.BudgetTitle && BudgetId=Gallery1.Selected.BudgetId))
+        Width: =366
+        X: =335.0612244897959
+        Y: =526.0851645083106
+        ZIndex: =22
+
+    Rectangle3_25 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle3_25.Fill
+        Fill: =RGBA(158,161,165,.1)
+        Height: =2
+        HoverFill: =Rectangle3_25.Fill
+        PressedFill: =Rectangle3_25.Fill
+        Visible: =!IsBlank(TextBox8.Text)||!IsBlank(Gallery5.Selected.icon5.Color)
+        Width: =262
+        X: =742
+        Y: =240.54554496430873
+        ZIndex: =23
+
+    Rectangle3_23 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle3_23.Fill
+        Fill: =RGBA(158,161,165,.1)
+        Height: =2
+        HoverFill: =Rectangle3_23.Fill
+        PressedFill: =Rectangle3_23.Fill
+        Width: =406
+        X: =317
+        Y: =454.1478046963047
+        ZIndex: =24
+
+    Rectangle5 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle5.Fill
+        Fill: =RGBA(204, 204, 204, 1)
+        Height: =1
+        HoverFill: =Rectangle5.Fill
+        PressedFill: =Rectangle5.Fill
+        Width: =1024
+        Y: =177.67808519982356
+        ZIndex: =25
+
+    TextBox13_1 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(204, 204, 204, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        HoverBorderColor: =TextBox13_1.BorderColor
+        HoverColor: =TextBox13_1.Color
+        HoverFill: =TextBox13_1.Fill
+        Italic: =true
+        PressedBorderColor: =TextBox13_1.BorderColor
+        PressedColor: =TextBox13_1.Color
+        PressedFill: =TextBox13_1.Fill
+        Text: ="No expense added"
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =!CountRows(Filter(Expenses,BudgetTitle=(Gallery1.Selected.BudgetTitle) && BudgetId=Gallery1.Selected.BudgetId))
+        Width: =406
+        X: =317
+        Y: =409.55374973996174
+        ZIndex: =26
+
+    Button2 As button:
+        BorderColor: =ColorFade(Button2.Fill, -15%)
+        Color: =RGBA(255,255,255,1)
+        DisabledBorderColor: =ColorFade(Button2.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        DisplayMode: =If(CountRows(Budgets)=0,DisplayMode.Disabled,DisplayMode.Edit)
+        Fill: =RGBA(25,113,156,1)
+        HoverBorderColor: =ColorFade(Button2.BorderColor, 20%)
+        HoverColor: =Button2.Color
+        HoverFill: =RGBA(0,0,0,0)
+        OnSelect: |-
+            =Navigate(AddExpenseScreen,ScreenTransition.Fade,{SpendRecord:SpendRecord,Record:Defaults(Expenses)});ResetForm(FormNewExpense);NewForm(FormNewExpense);Clear(ReceiptsCollect)
+        PressedBorderColor: =Button2.Fill
+        PressedColor: =Button2.Fill
+        PressedFill: =RGBA(0,0,0,0)
+        RadiusBottomLeft: =60
+        RadiusBottomRight: =60
+        RadiusTopLeft: =60
+        RadiusTopRight: =60
+        Text: =""
+        Width: =40
+        X: =656
+        Y: =475
+        ZIndex: =28
+
+    TextBox2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(19,113,155,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =62
+        HoverBorderColor: =TextBox2.BorderColor
+        HoverColor: =TextBox2.Color
+        HoverFill: =TextBox2.Fill
+        PressedBorderColor: =TextBox2.BorderColor
+        PressedColor: =TextBox2.Color
+        PressedFill: =TextBox2.Fill
+        Size: =20
+        Text: ="All budgets"
+        Width: =382
+        X: =16
+        Y: =87
+        ZIndex: =29
+
+    TextBox2_1 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(92,91,86,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =32.6327345309381
+        HoverBorderColor: =TextBox2_1.BorderColor
+        HoverColor: =TextBox2_1.Color
+        HoverFill: =TextBox2_1.Fill
+        PressedBorderColor: =TextBox2_1.BorderColor
+        PressedColor: =TextBox2_1.Color
+        PressedFill: =TextBox2_1.Fill
+        Size: =12
+        Text: ="Budgeted"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =121.666666666667
+        X: =317.44029719211585
+        Y: =88.231674434961
+        ZIndex: =30
+
+    TextBox2_2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(92,91,86,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =33.0339321357282
+        HoverBorderColor: =TextBox2_2.BorderColor
+        HoverColor: =TextBox2_2.Color
+        HoverFill: =TextBox2_2.Fill
+        PressedBorderColor: =TextBox2_2.BorderColor
+        PressedColor: =TextBox2_2.Color
+        PressedFill: =TextBox2_2.Fill
+        Size: =12
+        Text: ="Spent"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =93.1666666666667
+        X: =598.1340881815655
+        Y: =88.1798791896032
+        ZIndex: =31
+
+    TextBox2_3 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(92,91,86,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Semibold
+        Height: =33.1976047904192
+        HoverBorderColor: =TextBox2_3.BorderColor
+        HoverColor: =TextBox2_3.Color
+        HoverFill: =TextBox2_3.Fill
+        PressedBorderColor: =TextBox2_3.BorderColor
+        PressedColor: =TextBox2_3.Color
+        PressedFill: =TextBox2_3.Fill
+        Size: =12
+        Text: ="Remaining"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =105.2874251497
+        X: =853.8993077424435
+        Y: =88.098332138777
+        ZIndex: =32
+
+    icon7_1 As icon.Add:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
+        DisabledColor: =RGBA(193, 193, 193, 0.95)
+        DisabledFill: =icon7_1.Fill
+        DisplayMode: =If(CountRows(Budgets)=0,DisplayMode.Disabled,DisplayMode.Edit)
+        Height: =24
+        HoverBorderColor: =ColorFade(icon7_1.BorderColor, 20%)
+        HoverColor: =ColorFade(icon7_1.Color, 20%)
+        HoverFill: =icon7_1.Fill
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Navigate(AddExpenseScreen,ScreenTransition.Fade,{SpendRecord:SpendRecord,Record:Defaults(Expenses)});ResetForm(FormNewExpense);NewForm(FormNewExpense);Clear(ReceiptsCollect)
+        PressedBorderColor: =ColorFade(icon7_1.BorderColor, -20%)
+        PressedColor: =ColorFade(icon7_1.Color, -20%)
+        PressedFill: =icon7_1.Fill
+        Width: =24
+        X: =664
+        Y: =483
+        ZIndex: =33
+

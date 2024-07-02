@@ -1,0 +1,101 @@
+DeleteReceipt As screen:
+    Fill: =RGBA(0,164,228,228)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    TextBox9 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(47,41,43,1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =92
+        HoverBorderColor: =TextBox9.BorderColor
+        HoverColor: =TextBox9.Color
+        HoverFill: =TextBox9.Fill
+        PressedBorderColor: =TextBox9.BorderColor
+        PressedColor: =TextBox9.Color
+        PressedFill: =TextBox9.Fill
+        Text: =""
+        VerticalAlign: =VerticalAlign.Top
+        Width: =656
+        X: =144
+        Y: =284
+        ZIndex: =1
+
+    TextBox11 As label:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Height: =73.5
+        HoverBorderColor: =TextBox11.BorderColor
+        HoverColor: =TextBox11.Color
+        HoverFill: =TextBox11.Fill
+        PressedBorderColor: =TextBox11.BorderColor
+        PressedColor: =TextBox11.Color
+        PressedFill: =TextBox11.Fill
+        Size: =22
+        Text: |-
+            ="Are you sure you want to delete this 
+            receipt?"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =663
+        X: =180.5
+        Y: =286.855263157895
+        ZIndex: =2
+
+    Button1_10 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_10.Fill, -15%)
+        BorderThickness: =0
+        Color: =RGBA(255,255,255,1)
+        DisabledBorderColor: =ColorFade(Button1_10.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Fill: =RGBA(20,93,137,1)
+        Height: =50
+        HoverBorderColor: =Button1_10.BorderColor
+        HoverColor: =Button1_10.Color
+        HoverFill: =Button1_10.Fill
+        OnSelect: |
+            =RemoveIf(Receipts,Id=Reciptrecord.Id);Navigate(BudgetScreen,ScreenTransition.Fade)
+        PressedBorderColor: =Button1_10.BorderColor
+        PressedColor: =Button1_10.Color
+        PressedFill: =ColorFade(Button1_10.Fill, 10%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Delete"
+        Width: =290
+        X: =211.84246575342502
+        Y: =402.14473684210583
+        ZIndex: =5
+
+    Button1_11 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_11.Fill, -15%)
+        BorderThickness: =0
+        Color: =RGBA(20,93,137,1)
+        DisabledBorderColor: =ColorFade(Button1_11.BorderColor, 70%)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =50
+        HoverBorderColor: =ColorFade(Button1_11.BorderColor, 20%)
+        HoverColor: =Button1_11.Color
+        HoverFill: =Button1_11.Fill
+        OnSelect: =Back()
+        PressedBorderColor: =Button1_11.Fill
+        PressedColor: =Button1_11.Color
+        PressedFill: =ColorFade(Button1_11.Fill, 10%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Cancel"
+        Width: =290
+        X: =522.1575342465751
+        Y: =402.14473684210583
+        ZIndex: =6
+

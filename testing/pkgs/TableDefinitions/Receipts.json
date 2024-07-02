@@ -1,0 +1,7 @@
+{
+  "DataEntityMetadataJson": {
+    "Receipts": "{\"name\":\"Receipts\",\"title\":\"Receipts\",\"x-ms-permission\":\"read-write\",\"schema\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"Id\":{\"type\":\"number\",\"format\":\"double\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Id\"},\"BudgetId\":{\"type\":\"number\",\"format\":\"double\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"BudgetId\"},\"ExpenseId\":{\"type\":\"number\",\"format\":\"double\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"ExpenseId\"},\"Receiptlist\":{\"type\":\"string\",\"format\":\"uri\",\"x-ms-media-kind\":\"image\",\"x-ms-media-base-url\":\"https://unitedstates-002.azure-apim.net/apim/onedriveforbusiness/02488e4731e048a7b4b2b128f1faf8de/datasets/default\",\"x-ms-media-default-folder-path\":\"/drives/b!5X0guEaCJEmqVTEKeTPz6-roydWvzuJKocmrHza1RU654UnbMRdkQ7tyWop0G2Y3/root:/PowerApps/Templates/BudgetTracker_302f28b3-4cee-4ae6-a301-f728d3e6e722/data_images\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Receiptlist\"},\"ReceiptName\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"ReceiptName\"},\"__PowerAppsId__\":{\"type\":\"string\",\"x-ms-keyOrder\":1,\"x-ms-keyType\":\"primary\",\"x-ms-sort\":\"none\",\"x-ms-permission\":\"read-only\",\"title\":\"Row id\"}}}}}"
+  },
+  "EntityName": "Receipts",
+  "TableName": "Receipts"
+}
