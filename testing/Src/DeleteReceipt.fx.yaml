@@ -66,7 +66,7 @@ DeleteReceipt As screen:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Text: ="Delete"
+        Text: ="Delet"
         Width: =290
         X: =211.84246575342502
         Y: =402.14473684210583
