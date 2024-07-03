@@ -149,11 +149,11 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "true",
+          "AutoRuleBindingEnabled": true,
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Visible",
           "IsLockable": false,
-          "NameMapSourceSchema": "?"
+          "NameMapSourceSchema": "*[]"
         },
         {
           "AFDDataSourceName": "",
@@ -379,7 +379,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
