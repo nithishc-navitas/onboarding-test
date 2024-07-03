@@ -1008,10 +1008,3 @@ BudgetScreen As screen:
         Y: =483
         ZIndex: =33
 
-    Rectangle6 As rectangle:
-        Height: =511
-        Width: =601
-        X: =357
-        Y: =216
-        ZIndex: =34
-
