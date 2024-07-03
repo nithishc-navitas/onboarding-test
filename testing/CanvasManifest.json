@@ -136,6 +136,7 @@
     "recepitscreen",
     "DeleteReceipt",
     "DeleteExpense",
-    "DeleteBudget"
+    "DeleteBudget",
+    "Screen1"
   ]
 }
