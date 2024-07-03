@@ -2,7 +2,7 @@ Screen1 As screen:
 
     Label2 As label:
         Text: |-
-            ="Tarun loves YSR party
+            ="Roshan loves YSR party
             "
         X: =40
         Y: =40
