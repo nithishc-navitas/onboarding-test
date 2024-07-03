@@ -80,3 +80,11 @@ DeleteBudget As screen:
         Y: =402.14473684210583
         ZIndex: =4
 
+    Label1 As label:
+        Height: =54
+        Text: ="Command"
+        Width: =697
+        X: =163
+        Y: =232
+        ZIndex: =5
+
